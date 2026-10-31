@@ -1,0 +1,40 @@
+# Ini BASE tiap project. Copy 3 file MD + template ini ke root project baru,
+# lalu sesuaikan bagian yang ditandai [ISI].
+# File aturan AI (SKILL.md, arsitektur.md, testing.md) TIDAK BOLEH di-push
+# ke repo app — mereka tinggal di repo ai-dev-rules dan di-copy lokal saja.
+# Yang di-push: kode + .gitignore + .env.example (tanpa nilai asli).
+
+# --- secret & kredensial: jangan pernah commit ---
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+credentials.json
+
+# --- skill & aturan AI lokal (base, bukan bagian app) ---
+skills/
+SKILL.md
+arsitektur.md
+testing.md
+
+# --- build & dependency ---
+node_modules/
+dist/
+build/
+out/
+.next/
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# --- OS & editor ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log
