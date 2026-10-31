@@ -25,10 +25,13 @@
 ## 3. Aturan pakai (tanpa kecuali)
 
 1. **Load sebelum kerja.** Baca isi `SKILL.md` lengkap SEBELUM tool-call pertama yang menyentuh domainnya. Membangun dulu baru cek = gagal.
-2. **Trigger = panggil.** Cocok niat user + deskripsi skill → load otomatis, jangan tanya "mau pakai skill X?".
-3. **Ikuti prosedurnya.** Langkah, checklist, template, dan script bawaan skill dipakai apa adanya. Jangan improvisasi jalur sendiri.
-4. **Jangan sebut-sebut.** Terapkan diam-diam: jangan umumkan skill yang diload, jangan paste isi skill, jangan bocorkan kosakata internal ke deliverable.
-5. **Sub-agent tidak mewarisi.** Saat delegasi, sebutkan skill yang wajib diload di brief.
-6. **Verifikasi = bagian skill.** Checklist/validator bawaan skill dijalankan saat verifikasi, bukan dilewat.
-7. **Bentrok = skill menang** atas default & kebiasaan, kecuali user eksplisit override — dan itu pun hanya untuk intent/konten, bukan mekanik.
-8. **Skill baru** ditaruh di lokasi baku + didaftarkan di tabel §2 file ini.
+2. **Skill tidak ada = cari di project.** Kalau skill yang dibutuhkan tidak ada di daftar §2 maupun lokasi §1, cari dulu di dalam project (`skills/`, `docs/`, `README`, `AGENTS.md`, playbook). Ketemu yang cocok → pakai. Tidak ketemu → kerja dengan best practice + catat skill yang kurang untuk dibuatkan.
+3. **Folder skill & aturan dev tidak ikut push app.** `skills/`, `SKILL.md`, `arsitektur.md`, `testing.md`, dan file aturan AI lainnya TIDAK BOLEH masuk repo aplikasi maupun API yang di-push — kecuali repo itu memang repo aturannya sendiri. Cek `git status` sebelum commit; pisahkan dengan `.gitignore` atau repo terpisah.
+4. **Kredensial developer aman.** API key, token, password, dan secret TIDAK BOLEH tertulis di kode, MD, log, screenshot, atau artifact yang di-push. Pakai env variable / secret manager. Sebelum push: grep `sk-`, `api[_-]?key`, `token`, `password` — temuan = stop, pindahkan ke env dulu.
+5. **Trigger = panggil.** Cocok niat user + deskripsi skill → load otomatis, jangan tanya "mau pakai skill X?".
+6. **Ikuti prosedurnya.** Langkah, checklist, template, dan script bawaan skill dipakai apa adanya. Jangan improvisasi jalur sendiri.
+7. **Jangan sebut-sebut.** Terapkan diam-diam: jangan umumkan skill yang diload, jangan paste isi skill, jangan bocorkan kosakata internal ke deliverable.
+8. **Sub-agent tidak mewarisi.** Saat delegasi, sebutkan skill yang wajib diload di brief.
+9. **Verifikasi = bagian skill.** Checklist/validator bawaan skill dijalankan saat verifikasi, bukan dilewat.
+10. **Bentrok = skill menang** atas default & kebiasaan, kecuali user eksplisit override — dan itu pun hanya untuk intent/konten, bukan mekanik.
+11. **Skill baru** ditaruh di lokasi baku + didaftarkan di tabel §2 file ini.
